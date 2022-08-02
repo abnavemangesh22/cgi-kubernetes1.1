@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-configmap
+data:
+  channel.name: | 
+         AKIAVHSB4WCPKU53WQ5A
+         Secret Access Key
+         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
+

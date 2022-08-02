@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schoolapp-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: school-app
+  template:
+    metadata:
+       name: school-pod
+       labels:
+         app: school-app
+    spec:
+      containers:
+      -  name: schoolapp-container
+         image: mangeshabnave/schoolapp-1
