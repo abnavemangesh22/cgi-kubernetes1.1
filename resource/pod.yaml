@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mypod
+  name: mypod
+spec:
+  containers:
+  - image: nginx
+    name: mypod
+    resources:
+     limits:
+      memory: 100Mi
+      cpu: 0.5
+     requests:
+      memory: 50Mi
+      cpu: 0.2
+    
