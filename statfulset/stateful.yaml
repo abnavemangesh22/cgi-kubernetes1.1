@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nginx-sts
+spec:
+  serviceName: "nginx-headless"
+  replicas: 2
+  #podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      run: nginx-sts-demo
+  template:
+    metadata:
+      labels:
+        run: nginx-sts-demo
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+        - name: www
+          mountPath: /var/www/
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      storageClassName: managed-nfs-storage
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Mi

@@ -6,4 +6,4 @@ metadata:
 spec:
   hard:
     pods: "2"
-    configmaps: "1"
+    configmaps: "2"
