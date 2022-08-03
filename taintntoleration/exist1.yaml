@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-sleep-less-2
+spec:
+  tolerations:
+  - key: ""
+    effect: "NoSchedule"
+    operator: "Exists"
+  containers:
+  - name: busybox
+    image: busybox
+    args:
+    - sleep
+    - "1000"
